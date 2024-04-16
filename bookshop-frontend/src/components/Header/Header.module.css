@@ -1,0 +1,16 @@
+.container {
+  width: 100%;
+  background-color: #627254;
+  color: #f3eeea;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.button {
+  color: #f3eeea;
+}
