@@ -1,16 +1,15 @@
 import { Typography } from "@mui/material";
-import { IBook, TSaleAbility } from "types/Book";
+import { IBook, TSaleAbility } from "types/book";
 import Button from "components/Button";
-import styles from "components/BookContent/BookContent.module.css";
+import styles from "modules/Home/BookContent/BookContent.module.css";
 
 interface IBookContent {
   book: IBook;
+  onAdd: (item: IBook) => void;
 }
 
-const BookContent = ({ book }: IBookContent) => {
+const BookContent = ({ book, onAdd }: IBookContent) => {
   const { volumeInfo, saleInfo } = book;
-
-  const onAdd = (id: string) => {};
 
   return (
     <div>
@@ -33,7 +32,19 @@ const BookContent = ({ book }: IBookContent) => {
               {` ${saleInfo?.retailPrice?.currencyCode}
         ${saleInfo?.retailPrice?.amount}`}
             </Typography>
-            <Button title="Add to Cart" onClick={() => onAdd(book.id)} />
+            <Button
+              title="Add to Cart"
+              sx={{
+                backgroundColor: "#627254",
+                border: "1px solid #627254",
+                color: "#fff",
+                fontSize: "12px",
+                fontWeight: 600,
+                width: "100%",
+                cursor: "pointer",
+              }}
+              onClick={() => onAdd(book)}
+            />
           </div>
         </div>
       ) : null}
