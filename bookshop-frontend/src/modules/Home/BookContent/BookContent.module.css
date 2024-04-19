@@ -1,0 +1,13 @@
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  column-gap: 60px;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 5px;
+}
