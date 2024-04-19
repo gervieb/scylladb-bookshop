@@ -5,7 +5,14 @@ interface ISearchbar {
 }
 
 const Searchbar = ({ placeholder }: ISearchbar) => {
-  return <TextField variant="standard" placeholder={placeholder} />;
+  return (
+    <TextField
+      variant="standard"
+      fullWidth
+      placeholder={placeholder}
+      sx={{ outline: "none" }}
+    />
+  );
 };
 
 export default Searchbar;
