@@ -19,4 +19,5 @@ export interface IBook {
       currencyCode: string;
     };
   };
+  revision?: number;
 }

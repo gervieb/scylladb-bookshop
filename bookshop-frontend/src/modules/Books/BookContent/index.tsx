@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
-import { IBook, TSaleAbility } from "types/book";
-import Button from "components/Button";
-import styles from "modules/Home/BookContent/BookContent.module.css";
+import { IBook, TSaleAbility } from "src/types/book";
+import ButtonComponent from "src/components/Button";
+import styles from "src/modules/Books/BookContent/BookContent.module.css";
 
 interface IBookContent {
   book: IBook;
@@ -9,42 +9,35 @@ interface IBookContent {
 }
 
 const BookContent = ({ book, onAdd }: IBookContent) => {
-  const { volumeInfo, saleInfo } = book;
+  const { volumeInfo, saleInfo, revision } = book;
 
   return (
     <div>
       {saleInfo?.saleability === TSaleAbility.FOR_SALE ? (
-        <div className={styles.flexContainer}>
+        <div className={styles.gridContainer}>
           <img
             src={volumeInfo.imageLinks.smallThumbnail}
             alt={volumeInfo.title}
           />
           <div className={styles.contentContainer}>
-            <Typography variant="subtitle1" mb={1}>
+            <Typography variant="subtitle1" mb={1} sx={{ fontWeight: 600 }}>
               {volumeInfo.title}
             </Typography>
             <Typography variant="caption">{volumeInfo.description}</Typography>
+            {revision && revision > 1 && (
+              <Typography variant="subtitle2">Revision: {revision}</Typography>
+            )}
             <Typography variant="subtitle2">
               Page: {volumeInfo.pageCount}
             </Typography>
             <Typography variant="subtitle2">
               Price:
-              {` ${saleInfo?.retailPrice?.currencyCode}
-        ${saleInfo?.retailPrice?.amount}`}
+              <span
+                className={styles.price}
+              >{` ${saleInfo?.retailPrice?.currencyCode}
+        ${saleInfo?.retailPrice?.amount}`}</span>
             </Typography>
-            <Button
-              title="Add to Cart"
-              sx={{
-                backgroundColor: "#627254",
-                border: "1px solid #627254",
-                color: "#fff",
-                fontSize: "12px",
-                fontWeight: 600,
-                width: "100%",
-                cursor: "pointer",
-              }}
-              onClick={() => onAdd(book)}
-            />
+            <ButtonComponent title="Add to Cart" onClick={() => onAdd(book)} />
           </div>
         </div>
       ) : null}
