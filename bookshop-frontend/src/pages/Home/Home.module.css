@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  column-gap: "40px";
+}
+
+.content {
+  margin: 40px 80px;
+  flex: 3;
+}
+
+.loadingContainer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 80px;
+}
