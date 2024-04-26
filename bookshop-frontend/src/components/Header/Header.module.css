@@ -14,3 +14,7 @@
 .button {
   color: #f3eeea;
 }
+
+.cart {
+  cursor: pointer;
+}
