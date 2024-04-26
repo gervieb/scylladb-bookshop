@@ -7,6 +7,7 @@ ScyllaDB Application is an online bookstore built using React for the frontend a
 - Remove from cart: Users can remove books from their shopping cart.
 - Adjust quantities: Users can change the quantity of books in their shopping cart.
 - Calculate total: The application calculates the total price of the items in the shopping cart.
+- Fetch specific books based on title from the Google Books API.
 - Fetch book revisions: Users can view different revisions of a book based on its ISBN, fetched from the Open Library API.
 
 ## Technologies Used
