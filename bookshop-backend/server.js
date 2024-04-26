@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const logRequests = require("./helpers/logger");
 
 const booksRoute = require("./routes/booksRoute");
 
@@ -21,6 +22,7 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use(logRequests);
 app.use("/books", booksRoute);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
