@@ -1,7 +1,8 @@
-const express = require("express"),
-  router = express.Router(),
-  controller = require("../controllers/booksController");
+const express = require("express");
+const router = express.Router();
+const { getAll, getByQuery } = require("../controllers/booksController");
 
-router.get("/", controller.getAll);
+router.get("/", getAll);
+router.get("/:query", getByQuery);
 
 module.exports = router;
