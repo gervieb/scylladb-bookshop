@@ -23,11 +23,15 @@ ScyllaDB Application is an online bookstore built using React for the frontend a
 
 To get started with this project, follow the installation instructions in the frontend and backend README files.
 
-## Cloning Repository
+1. Clone the repository
 
-1. git clone git@github.com:gervieb/scylladb-bookshop.git
-2. cd scylladb-bookshop
+````bash
+   git clone https://github.com/gervieb/scylladb-bookshop.git```
+2. Navigate to the project directory
+   cd scylladb-bookshop
 
 ## Usage
 
 After installing the frontend and backend, start both the frontend and backend servers. Users can then access the application through a web browser.
+
+````
