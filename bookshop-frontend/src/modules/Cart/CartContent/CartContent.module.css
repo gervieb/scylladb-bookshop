@@ -1,0 +1,25 @@
+.container {
+  margin-top: 10px;
+}
+
+.cartContainer {
+  margin-bottom: 30px;
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+.flexContainer {
+  width: "inherit";
+  display: flex;
+  justify-content: space-between;
+  align-items: "flex-start";
+  margin-top: 8px;
+  gap: 8px;
+}
+
+.closeBtn {
+  cursor: pointer;
+  :hover {
+    color: gray;
+  }
+}
