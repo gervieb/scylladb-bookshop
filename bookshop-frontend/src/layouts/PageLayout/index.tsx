@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import Header from "components/Header";
-import styles from "layouts/PageLayout/PageLayout.module.css";
+import Header from "src/components/Header";
+import styles from "src/layouts/PageLayout/PageLayout.module.css";
 
 interface IPageLayout {
   children: ReactNode;
